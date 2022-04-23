@@ -2,7 +2,7 @@
 
 <h4 align="center"> 𝐀 𝐏𝐎𝐖𝐄𝐑𝐅𝐔𝐋 𝐒𝐏𝐀𝐌 𝐔𝐒𝐄𝐑𝐁𝐎𝐓𝐒</h4>
 
-<p align="center"><a href="https://t.me/HACK3R_XD"><img src="https://te.legra.ph/file/fee94bc3ea4a4a0f6ae26.jpg" width="400"></a></p>
+<p align="center"><a href="https://t.me/HACK3R_XD"><img src="https://te.legra.ph/file/ec7492671007182f40a45.jpg" width="400"></a></p>
 
 
 > ⭐️ Thanks to everyone for using THIS OP HACKER SPAM BOT, That is the greatest pleasure we have !
