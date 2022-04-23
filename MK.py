@@ -1336,7 +1336,7 @@ async def restart(e):
         os.execl(sys.executable, sys.executable, *sys.argv)
         quit()
 
-print("\nMKxSPAM DEPLOYED !!")
+print("\n𝐌𝐊𝐱𝐒𝐏𝐀𝐌 𝐃𝐄𝐏𝐋𝐎𝐘𝐄𝐃 𝐒𝐔𝐂𝐂𝐄𝐒𝐒𝐅𝐔𝐋𝐋𝐘 😎🤘🏻\nMy Master ---> @𝐇𝐀𝐂𝐊𝟑𝐑_𝐗𝐃")
 
 if len(sys.argv) not in (1, 3, 4):
     try:
