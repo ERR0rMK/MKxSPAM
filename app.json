@@ -1,7 +1,7 @@
 {
-  "name": "𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑_𝐒𝐏𝐀𝐌",
-  "description": "𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠 𝗙𝗔𝗦𝗧 & 𝗦𝗠𝗢𝗢𝗧𝗛𝗘𝗦𝗧 𝗦𝗣𝗔𝗠 𝗕𝗬 @𝗘𝗡𝗚𝗜𝗡𝗘𝗘𝗥𝗚𝗔𝗠𝗘𝗦",
-  "logo": "https://te.legra.ph/file/fee94bc3ea4a4a0f6ae26.jpg",
+  "name": "𝐌𝐊𝐱𝐒𝐏𝐀𝐌",
+  "description": "𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠 𝗙𝗔𝗦𝗧 & 𝗦𝗠𝗢𝗢𝗧𝗛𝗘𝗦𝗧 𝗦𝗣𝗔𝗠 𝗕𝗬 @𝐇𝐀𝐂𝐊𝟑𝐑_𝐗𝐃",
+  "logo": "https://te.legra.ph/file/ec7492671007182f40a45.jpg",
   "keywords": [
     "spambot",
     "telegram",
@@ -134,7 +134,7 @@
         "required": false
       },
       "API_ID": {
-        "description": "𝐴𝑃𝐼 𝐼𝐷",
+        "description": "API ID",
         "value": "",
         "required": true
       },
