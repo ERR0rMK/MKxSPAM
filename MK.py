@@ -1,7 +1,6 @@
 import os
 import sys
 import random
-from datetime import datetime
 from os import execl
 from telethon import TelegramClient, events
 from telethon.sessions import StringSession
@@ -12,7 +11,7 @@ import telethon.utils
 from telethon.tl import functions
 from telethon.tl.functions.channels import LeaveChannelRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
-from Utils import RAID, RRAID
+from Utils import RAID
 from telethon.tl.functions.channels import JoinChannelRequest
 
 from telethon.tl.functions.users import GetFullUserRequest
@@ -1010,167 +1009,6 @@ async def _(e):
 
 
 
-@M1.on(events.NewMessage(incoming=True))
-@M2.on(events.NewMessage(incoming=True))
-@M3.on(events.NewMessage(incoming=True))
-@M4.on(events.NewMessage(incoming=True))
-@M5.on(events.NewMessage(incoming=True))
-@M6.on(events.NewMessage(incoming=True))
-@M7.on(events.NewMessage(incoming=True))
-@M8.on(events.NewMessage(incoming=True))
-@M9.on(events.NewMessage(incoming=True))
-@M10.on(events.NewMessage(incoming=True))
-@M11.on(events.NewMessage(incoming=True))
-@M12.on(events.NewMessage(incoming=True))
-@M13.on(events.NewMessage(incoming=True))
-@M14.on(events.NewMessage(incoming=True))
-@M15.on(events.NewMessage(incoming=True))
-@M16.on(events.NewMessage(incoming=True))
-@M17.on(events.NewMessage(incoming=True))
-@M18.on(events.NewMessage(incoming=True))
-@M19.on(events.NewMessage(incoming=True))
-@M20.on(events.NewMessage(incoming=True))
-@M21.on(events.NewMessage(incoming=True))
-@M22.on(events.NewMessage(incoming=True))
-@M23.on(events.NewMessage(incoming=True))
-@M24.on(events.NewMessage(incoming=True))
-@M25.on(events.NewMessage(incoming=True))
-
-async def _(event):
-    global que
-    queue = que.get(event.sender_id)
-    if not queue:
-        return
-    async with event.client.action(event.chat_id, "typing"):
-        await asyncio.sleep(0.2)
-    async with event.client.action(event.chat_id, "typing"):
-        await event.client.send_message(
-            entity=event.chat_id,
-            message="""{}""".format(random.choice(RRAID)),
-            reply_to=event.message.id,
-        ) 
-
-
-@M1.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M2.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M3.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M4.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M5.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M6.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M7.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M8.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M9.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M10.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M11.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M12.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M13.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M14.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M15.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M16.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M17.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M18.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M19.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M20.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M21.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M22.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M23.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M24.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-@M25.on(events.NewMessage(incoming=True, pattern=r"\.rraid"))
-
-
-async def _(e):
-    global que
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗥𝗲𝗽𝗹𝘆𝗥𝗮𝗶𝗱\n\nCommand:\n\n.rraid <Username of User>\n\n.rraid <reply to a User>"
-    if e.sender_id in MK_USERS:
-        if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
-            return await e.reply(usage, parse_mode=None, link_preview=None )
-        rraid = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
-        await e.get_reply_message()
-        if len(e.text) > 11:
-            message = str(rraid[0])
-            a = await e.client.get_entity(message)
-            g = a.id
-            que[g] = []
-            qeue = que.get(g)
-            appendable = [g]
-            qeue.append(appendable)
-            text = "RUK TERI TO MAA CHODNI PADEGI"
-            await e.reply(text, parse_mode=None, link_preview=None )
-        elif e.reply_to_msg_id:             
-            a = await e.get_reply_message()
-            b = await e.client.get_entity(a.sender_id)
-            g = b.id
-            que[g] = []
-            qeue = que.get(g)
-            appendable = [g]
-            qeue.append(appendable)
-            text = "𝐑𝐔𝐊 𝐓𝐄𝐑𝐈 𝐁𝐄𝐇𝐄𝐍 𝐂𝐇𝐎𝐃𝐓𝐀 𝐇𝐔"
-            await e.reply(text, parse_mode=None, link_preview=None )
-        else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
-
-            
-@M1.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M2.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M3.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M4.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M5.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M6.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M7.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M8.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M9.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M10.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M11.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M12.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M13.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M14.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M15.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M16.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M17.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M18.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M19.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M20.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M21.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M22.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M23.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M24.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-@M25.on(events.NewMessage(incoming=True, pattern=r"\.drraid"))
-
-async def _(e):
-    global que
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗗𝗲𝗮𝗰𝘁𝗶𝘃𝗮𝘁𝗲 𝗥𝗲𝗽𝗹𝘆𝗥𝗮𝗶𝗱\n\nCommand:\n\n.drraid <Username of User>\n\n.drraid <reply to a User>"
-    if e.sender_id in MK_USERS:
-        if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
-            return await e.reply(usage, parse_mode=None, link_preview=None )
-        drraid = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
-        await e.get_reply_message()
-        if len(e.text) > 12:
-            message = str(drraid[0])
-            a = await e.client.get_entity(message)
-            g = a.id
-            try:
-                queue = que.get(g)
-                queue.pop(0)
-            except Exception as f:
-                pass
-            text = "PEHLI FURSAT ME NIKAL"
-            await e.reply(text, parse_mode=None, link_preview=None )
-        elif e.reply_to_msg_id:             
-            a = await e.get_reply_message()
-            b = await e.client.get_entity(a.sender_id)
-            g = b.id
-            try:
-                queue = que.get(g)
-                queue.pop(0)
-            except Exception as f:
-                pass
-            text = "𝐉𝐀𝐀 𝐌𝐀𝐀𝐅 𝐊𝐈𝐘𝐀 𝐁𝐒𝐃𝐊 😂"
-            await e.reply(text, parse_mode=None, link_preview=None )
-        else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
-    
-       
-
 @M1.on(events.NewMessage(incoming=True, pattern=r"\.ping"))
 @M2.on(events.NewMessage(incoming=True, pattern=r"\.ping"))
 @M3.on(events.NewMessage(incoming=True, pattern=r"\.ping"))
@@ -1231,7 +1069,7 @@ async def ping(e):
 @M25.on(events.NewMessage(incoming=True, pattern=r"\.restart"))
 async def restart(e):
     if e.sender_id in MK_USERS:
-        text = "2 𝐌𝐈𝐍 𝐑𝐔𝐊 𝐑𝐄𝐃𝐁𝐔𝐋𝐋 𝐏𝐄 𝐑𝐇𝐀 🦏"
+        text = "3 𝐌𝐈𝐍 𝐑𝐔𝐊 𝐑𝐄𝐃𝐁𝐔𝐋𝐋 𝐏𝐄 𝐑𝐇𝐀 🥵"
         await e.reply(text, parse_mode=None, link_preview=None )
         try:
             await M1.disconnect()
