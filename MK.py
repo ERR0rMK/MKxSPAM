@@ -1,20 +1,14 @@
 import os
 import sys
 import random
-from os import execl
 from telethon import TelegramClient, events
 from telethon.sessions import StringSession
-from telethon.tl.functions.account import UpdateProfileRequest
 from Config import SUDO, API_ID, API_HASH, STRING, STRING2, STRING3, STRING4 ,STRING5, STRING6, STRING7, STRING8 ,STRING9, STRING10, STRING11, STRING12 , STRING13 , STRING14 , STRING15 ,STRING16 , STRING17 , STRING18 , STRING19 , STRING20 , STRING21 , STRING22 , STRING23 , STRING24 , STRING25 
 import asyncio
-import telethon.utils
 from telethon.tl import functions
 from telethon.tl.functions.channels import LeaveChannelRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
 from Utils import RAID
-from telethon.tl.functions.channels import JoinChannelRequest
-
-from telethon.tl.functions.users import GetFullUserRequest
 
 
 
@@ -559,10 +553,7 @@ loop.run_until_complete(StartMK())
 @M24.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
 @M25.on(events.NewMessage(incoming=True, pattern=r"\.spam"))
 async def spam(e):
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗦𝗽𝗮𝗺\n\nCommand:\n\n.spam <count> <message to spam>\n\n.spam <count> <reply to a message>\n\nCount must be a integer."
     if e.sender_id in MK_USERS:
-        if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
-            return await e.reply(usage, parse_mode=None, link_preview=None )
         aries = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         mk = await e.get_reply_message()
         if len(aries) == 2:
@@ -582,8 +573,6 @@ async def spam(e):
                 async with e.client.action(e.chat_id, "typing"):
                     await e.client.send_message(e.chat_id, message)
                     await asyncio.sleep(0.1)
-        else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
 
 
 
@@ -614,10 +603,7 @@ async def spam(e):
 @M25.on(events.NewMessage(incoming=True, pattern=r"\.raid"))
 
 async def spam(e):
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗥𝗮𝗶𝗱\n\nCommand:\n\n.raid <count> <Username of User>\n\n.raid <count> <reply to a User>\n\nCount must be a integer."
     if e.sender_id in MK_USERS:
-        if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
-            return await e.reply(usage, parse_mode=None, link_preview=None )
         aries = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         await e.get_reply_message()
         if len(aries) == 2:
@@ -646,8 +632,6 @@ async def spam(e):
                 async with e.client.action(e.chat_id, "typing"):
                     await e.client.send_message(e.chat_id, caption)
                     await asyncio.sleep(0.1)
-        else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
 
 
 
@@ -678,7 +662,6 @@ async def spam(e):
 @M25.on(events.NewMessage(incoming=True, pattern=r"\.join"))
 
 async def _(e):
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗝𝗼𝗶𝗻\n\nCommand:\n\n.join <Public Channel or Group Link/Username>"
     if e.sender_id in MK_USERS:
         mkj = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         if len(e.text) > 6:
@@ -689,9 +672,7 @@ async def _(e):
                 await e.client(functions.channels.JoinChannelRequest(channel=bc))
                 await event.edit("𝗔𝗟𝗟 𝗦𝗘𝗧 𝗘𝗡𝗧𝗘𝗥𝗘𝗗 🔥")
             except Exception as e:
-                await event.edit(str(e))   
-        else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
+                await event.edit(str(e))
             
  
 
@@ -722,7 +703,6 @@ async def _(e):
 @M25.on(events.NewMessage(incoming=True, pattern=r"\.leave"))
 
 async def _(e):
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗟𝗲𝗮𝘃𝗲\n\nCommand:\n\n.leave <Channel or Chat ID>"
     if e.sender_id in MK_USERS:
         mkl = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         if len(e.text) > 7:
@@ -734,9 +714,7 @@ async def _(e):
                 await event.client(LeaveChannelRequest(bc))
                 await event.edit("𝐒𝐎𝐎𝐍 𝐁𝐀𝐂𝐊 𝐁𝐒𝐃𝐊 🥃")
             except Exception as e:
-                await event.edit(str(e))   
-        else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
+                await event.edit(str(e))
 
 
 
@@ -766,7 +744,6 @@ async def _(e):
 @M24.on(events.NewMessage(incoming=True, pattern=r"\.pjoin"))
 @M25.on(events.NewMessage(incoming=True, pattern=r"\.pjoin"))
 async def _(e):
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗣𝗿𝗶𝘃𝗮𝘁𝗲 𝗝𝗼𝗶𝗻\n\nCommand:\n\n.pjoin <Private Channel or Group's access hash>\n\nExample :\nLink = https://t.me/joinchat/TheMKHackerX131\n\n.pjoin TheMKHackerX131"
     if e.sender_id in MK_USERS:
         mkp = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         if len(e.text) > 7:
@@ -777,9 +754,7 @@ async def _(e):
                 await e.client(ImportChatInviteRequest(bc))
                 await event.edit("𝐀𝐋𝐋 𝐒𝐄𝐓 𝐄𝐍𝐓𝐄𝐑𝐄𝐃 𝐈𝐍 𝐏𝐑𝐈𝐕𝐀𝐓𝐄 𝐂𝐇𝐀𝐓 🔥")
             except Exception as e:
-                await event.edit(str(e))   
-        else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
+                await event.edit(str(e))
 
 
 
@@ -947,6 +922,7 @@ async def restart(e):
             pass
         os.execl(sys.executable, sys.executable, *sys.argv)
         quit()
+
 
 print("\n𝐌𝐊𝐱𝐒𝐏𝐀𝐌 𝐃𝐄𝐏𝐋𝐎𝐘𝐄𝐃 𝐒𝐔𝐂𝐂𝐄𝐒𝐒𝐅𝐔𝐋𝐋𝐘 😎🤘🏻\nMy Master ---> @𝐇𝐀𝐂𝐊𝟑𝐑_𝐗𝐃")
 
