@@ -1,42 +1,50 @@
+import asyncio
 import os
-import sys
 import random
+import sys
+from os import getenv
+
+from dotenv import load_dotenv
 from telethon import TelegramClient, events
 from telethon.sessions import StringSession
-from Config import SUDO, API_ID, API_HASH, STRING, STRING2, STRING3, STRING4 ,STRING5, STRING6, STRING7, STRING8 ,STRING9, STRING10, STRING11, STRING12 , STRING13 , STRING14 , STRING15 ,STRING16 , STRING17 , STRING18 , STRING19 , STRING20 , STRING21 , STRING22 , STRING23 , STRING24 , STRING25 
-import asyncio
 from telethon.tl import functions
 from telethon.tl.functions.channels import LeaveChannelRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
+
 from Utils import RAID
 
+load_dotenv()
 
 
-MK1 = STRING
-MK2 = STRING2
-MK3 = STRING3
-MK4 = STRING4
-MK5 = STRING5
-MK6 = STRING6
-MK7 = STRING7
-MK8 = STRING8
-MK9 = STRING9
-MK10 = STRING10
-MK11 = STRING11
-MK12 = STRING12
-MK13 = STRING13
-MK14 = STRING14
-MK15 = STRING15
-MK16 = STRING16
-MK17 = STRING17
-MK18 = STRING18
-MK19 = STRING19
-MK20 = STRING20
-MK21 = STRING21
-MK22 = STRING22
-MK23 = STRING23
-MK24 = STRING24
-MK25 = STRING25
+MK1 = getenv("STRING")
+MK2 = getenv("STRING2")
+MK3 = getenv("STRING3")
+MK4 = getenv("STRING4")
+MK5 = getenv("STRING5")
+MK6 = getenv("STRING6")
+MK7 = getenv("STRING7")
+MK8 = getenv("STRING8")
+MK9 = getenv("STRING9")
+MK10 = getenv("STRING10")
+MK11 = getenv("STRING11")
+MK12 = getenv("STRING12")
+MK13 = getenv("STRING13")
+MK14 = getenv("STRING14")
+MK15 = getenv("STRING15")
+MK16 = getenv("STRING16")
+MK17 = getenv("STRING17")
+MK18 = getenv("STRING18")
+MK19 = getenv("STRING19")
+MK20 = getenv("STRING20")
+MK21 = getenv("STRING21")
+MK22 = getenv("STRING22")
+MK23 = getenv("STRING23")
+MK24 = getenv("STRING24")
+MK25 = getenv("STRING25")
+
+API_ID = getenv("API_ID")
+API_HASH = getenv("API_HASH")
+MK_USERS = list(map(int, getenv("SUDO").split()))
 
 
 M1 = ""
@@ -67,8 +75,6 @@ M25 = ""
 
 
 que = {}
-MK_USERS = SUDO
-
 
 async def StartMK():
     global M1
@@ -666,11 +672,11 @@ async def _(e):
         mkj = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         if len(e.text) > 6:
             bc = mkj[0]
-            text = "𝐀𝐑𝐇𝐀 𝐓𝐄𝐑𝐈 𝐆𝐀𝐍𝐃 𝐌𝐀𝐑𝐍𝐄"
+            text = "𝐇𝐀𝐂𝐊𝐈𝐍𝐆..."
             event = await e.reply(text, parse_mode=None, link_preview=None )
             try:
                 await e.client(functions.channels.JoinChannelRequest(channel=bc))
-                await event.edit("𝗔𝗟𝗟 𝗦𝗘𝗧 𝗘𝗡𝗧𝗘𝗥𝗘𝗗 🔥")
+                await event.edit("𝐇𝐀𝐂𝐊𝐄𝐃 𝐏𝐔𝐁𝐋𝐈𝐂 𝐂𝐇𝐀𝐓 🔥")
             except Exception as e:
                 await event.edit(str(e))
             
@@ -708,11 +714,11 @@ async def _(e):
         if len(e.text) > 7:
             bc = mkl[0]
             bc = int(bc)
-            text = "𝐉𝐀𝐑𝐇𝐀 𝐁𝐀𝐀𝐃 𝐌𝐄 𝐌𝐈𝐋𝐓𝐄😈"
+            text = "𝐔𝐧𝐇𝐀𝐂𝐊𝐈𝐍𝐆..."
             event = await e.reply(text, parse_mode=None, link_preview=None )
             try:
                 await event.client(LeaveChannelRequest(bc))
-                await event.edit("𝐒𝐎𝐎𝐍 𝐁𝐀𝐂𝐊 𝐁𝐒𝐃𝐊 🥃")
+                await event.edit("𝐔𝐧𝐇𝐀𝐂𝐊𝐄𝐃 𝐓𝐇𝐀𝐓 𝐆𝐑𝐎𝐔𝐏 😏")
             except Exception as e:
                 await event.edit(str(e))
 
@@ -748,11 +754,11 @@ async def _(e):
         mkp = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         if len(e.text) > 7:
             bc = mkp[0]
-            text = "Joining..."
+            text = "𝐇𝐀𝐂𝐊𝐈𝐍𝐆..."
             event = await e.reply(text, parse_mode=None, link_preview=None )
             try:
                 await e.client(ImportChatInviteRequest(bc))
-                await event.edit("𝐀𝐋𝐋 𝐒𝐄𝐓 𝐄𝐍𝐓𝐄𝐑𝐄𝐃 𝐈𝐍 𝐏𝐑𝐈𝐕𝐀𝐓𝐄 𝐂𝐇𝐀𝐓 🔥")
+                await event.edit("𝐇𝐀𝐂𝐊𝐄𝐃 𝐏𝐑𝐈𝐕𝐀𝐓𝐄 𝐂𝐇𝐀𝐓 🔥")
             except Exception as e:
                 await event.edit(str(e))
 
@@ -818,7 +824,7 @@ async def ping(e):
 @M25.on(events.NewMessage(incoming=True, pattern=r"\.restart"))
 async def restart(e):
     if e.sender_id in MK_USERS:
-        text = "3 𝐌𝐈𝐍 𝐑𝐔𝐊 𝐑𝐄𝐃𝐁𝐔𝐋𝐋 𝐏𝐄 𝐑𝐇𝐀 🥵"
+        text = "𝐄𝐑𝐑𝟎𝐑 𝟏𝟑𝟏: 𝐒𝐄𝐑𝐕𝐄𝐑 𝐈𝐒 𝐑𝐄𝐒𝐓𝐀𝐑𝐓𝐈𝐍𝐆 🥵"
         await e.reply(text, parse_mode=None, link_preview=None )
         try:
             await M1.disconnect()
